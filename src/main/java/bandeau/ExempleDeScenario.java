@@ -28,13 +28,13 @@ public class ExempleDeScenario {
         s.addEffect(new Rotate("2 tours à droite", 180, 4000, true), 2);
         
         // On cree les bandeaux
-        Bandeau b1 = new Bandeau();
-        //Bandeau b2 = new Bandeau();
+        MonBandeau b1 = new MonBandeau();
+        MonBandeau b2 = new MonBandeau();
         //Bandeau b3 = new Bandeau();
         System.out.println("CTRL+C pour terminer le programme");
         // On doit jouer le scénario en même temps sur plusieurs bandeaux :
         s.playOn(b1);
-        //s.playOn(b2);
+        s.playOn(b2);
         
         // On ne doit pas pouvoir changer un scénario quand il est en train de se jouer
         try {
@@ -48,3 +48,4 @@ public class ExempleDeScenario {
     }
 
 }
+//Sans multithreads, les deux bandeaux vont s'exécuter à la suite et non en même temps. 
